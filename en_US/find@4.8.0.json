@@ -1,0 +1,203 @@
+{
+  "command": "find",
+  "show_version": "find --version | head -1 | awk '{print $NF}'",
+  "supported_versions": [
+    "4.8.0"
+  ],
+  "arguments": [
+    {
+      "keyword": "-P",
+      "help": "Never  follow  symbolic  links."
+    },
+    {
+      "keyword": "-L",
+      "help": "Follow symbolic links."
+    },
+    {
+      "keyword": "-H",
+      "help": "Do not follow symbolic links, except while processing the command line arguments."
+    },
+    {
+      "variable": "starting-point",
+      "type": "directory",
+      "display_order": 1,
+      "help": "The directory to start searching"
+    },
+    {
+      "keyword": "-depth",
+      "group": "global",
+      "help": "Process each directory's contents before the directory itself."
+    },
+    {
+      "keyword": "-maxdepth",
+      "variable": "levels",
+      "group": "global",
+      "help": "Descend at most levels (a non-negative integer) levels of directories below the starting-points."
+    },
+    {
+      "keyword": "-mindepth",
+      "variable": "levels",
+      "group": "global",
+      "help": "Do not apply any tests or actions at levels less than levels (a non-negative integer)"
+    },
+    {
+      "keyword": "-mount",
+      "group": "global",
+      "help": "Don't descend directories on other filesystems."
+    },
+    {
+      "keyword": "-xdev",
+      "group": "global",
+      "help": "Don't descend directories on other filesystems. For compatibility."
+    },
+    {
+      "keyword": "-name",
+      "variable": "pattern",
+      "group": "tests",
+      "help": "Base of file name (the path with the leading directories removed) matches shell pattern pattern."
+    },
+    {
+      "keyword": "-iname",
+      "variable": "pattern",
+      "group": "tests",
+      "help": "Like -name, but the match is case insensitive."
+    },
+    {
+      "keyword": "-path",
+      "variable": "pattern",
+      "group": "tests",
+      "help": "File name matches shell pattern pattern."
+    },
+    {
+      "keyword": "-empty",
+      "group": "tests",
+      "help": "File is empty and is either a regular file or a directory."
+    },
+    {
+      "keyword": "-readable",
+      "group": "tests",
+      "help": "Matches files which are readable by the current user."
+    },
+    {
+      "keyword": "-writable",
+      "group": "tests",
+      "help": "Matches files which are writable by the current user."
+    },
+    {
+      "keyword": "-executable",
+      "group": "tests",
+      "help": "Matches files which are executable and directories which are searchable (in a file name resolution sense) by the current user."
+    },
+    {
+      "keyword": "-perm",
+      "variable": "mode",
+      "group": "tests",
+      "help": "File's permission bits are mode (octal or symbolic)."
+    },
+    {
+      "keyword": "-size",
+      "variable": "size",
+      "group": "tests",
+      "help": "File uses less than, more than or exactly n units of space, rounding up. Suffixes cwbkMG can be used."
+    },
+    {
+      "keyword": "-type",
+      "variable": "c",
+      "choices": [
+        "b",
+        "c",
+        "d",
+        "p",
+        "f",
+        "l",
+        "s"
+      ],
+      "group": "tests",
+      "help": "File uses less than, more than or exactly n units of space, rounding up. Suffixes cwbkMG can be used."
+    },
+    {
+      "keyword": "-user",
+      "variable": "user",
+      "type": "user",
+      "group": "tests",
+      "help": "File uses less than, more than or exactly n units of space, rounding up. Suffixes cwbkMG can be used."
+    },
+    {
+      "keyword": "-atime",
+      "variable": "n",
+      "group": "time",
+      "help": "File was last accessed less than, more than or exactly n*24 hours ago."
+    },
+    {
+      "keyword": "-amin",
+      "variable": "n",
+      "group": "time",
+      "help": "File was last accessed less than, more than or exactly n minutes ago."
+    },
+    {
+      "keyword": "-atime",
+      "variable": "n",
+      "group": "time",
+      "help": "File was last accessed less than, more than or exactly n*24 hours ago."
+    },
+    {
+      "keyword": "-cmin",
+      "variable": "n",
+      "group": "time",
+      "help": "File's status was last changed less than, more than or exactly n minutes ago."
+    },
+    {
+      "keyword": "-ctime",
+      "variable": "n",
+      "group": "time",
+      "help": "File's status was last changed less than, more than or exactly n*24 hours ago."
+    },
+    {
+      "keyword": "-mmin",
+      "variable": "n",
+      "group": "time",
+      "help": "File's data was last modified less than, more than or exactly n minutes ago."
+    },
+    {
+      "keyword": "-mtime",
+      "variable": "n",
+      "group": "time",
+      "help": "File's data was last modified less than, more than or exactly n*24 hours ago."
+    },
+    {
+      "keyword": "-exec",
+      "arguments": [
+        {
+          "variable": "command",
+          "required": true
+        },
+        {
+          "keyword": "\\;",
+          "required": true
+        }
+      ],
+      "group": "action",
+      "help": "Execute command."
+    },
+    {
+      "keyword": "-exec",
+      "arguments": [
+        {
+          "variable": "command",
+          "required": true
+        },
+        {
+          "keyword": "{} +",
+          "required": true
+        }
+      ],
+      "group": "action",
+      "help": "Execute command. The command line is built by appending each selected file name at the end;"
+    },
+    {
+      "keyword": "-delete",
+      "group": "action",
+      "help": "Delete  files"
+    }
+  ]
+}

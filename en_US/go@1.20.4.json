@@ -1,0 +1,200 @@
+{
+  "command": "go",
+  "show_version": "go version | awk '{print $3}' | sed 's/^go//'",
+  "supported_versions": [
+    "1.20.4"
+  ],
+  "subcommands": [
+    {
+      "command": "go build",
+      "arguments": [
+        {
+          "keyword": "-o",
+          "variable": "output",
+          "display_order": 3,
+          "help": "Output file or directory"
+        },
+        {
+          "keyword": "-a",
+          "help": "force rebuilding of packages that are already up-to-date."
+        },
+        {
+          "keyword": "-n",
+          "group": "print",
+          "help": "print the commands but do not run them."
+        },
+        {
+          "keyword": "-p",
+          "variable": "n",
+          "help": "the number of programs that can be run in parallel, the default is GOMAXPROCS"
+        },
+        {
+          "keyword": "-race",
+          "help": "enable data race detection"
+        },
+        {
+          "keyword": "-msan",
+          "help": "enable interoperation with memory sanitizer."
+        },
+        {
+          "keyword": "-asan",
+          "help": "enable interoperation with address sanitizer."
+        },
+        {
+          "keyword": "-cover",
+          "help": "enable code coverage instrumentation (requires that GOEXPERIMENT=coverageredesign be set)"
+        },
+        {
+          "keyword": "-coverpkg",
+          "variable": "pattern",
+          "help": "For a build that targets package 'main'. apply coverage analysis to each package matching the patterns."
+        },
+        {
+          "keyword": "-v",
+          "group": "print",
+          "help": "print the names of packages as they are compiled."
+        },
+        {
+          "keyword": "-work",
+          "group": "print",
+          "help": "print the name of the temporary work directory and do not delete it when exiting."
+        },
+        {
+          "keyword": "-x",
+          "group": "print",
+          "help": "print the commands."
+        },
+        {
+          "keyword": "-asmflags",
+          "variable": "arg_list",
+          "group": "flags",
+          "help": "arguments to pass on each go tool asm invocation."
+        },
+        {
+          "keyword": "-buildmode",
+          "variable": "mode",
+          "choices": [
+            "archive",
+            "c-archive",
+            "c-shared",
+            "default",
+            "shared",
+            "exe",
+            "pie",
+            "plugin"
+          ],
+          "help": "build mode to use. See 'go help buildmode' for more."
+        },
+        {
+          "keyword": "-buildvcs",
+          "variable": "option",
+          "choices": [
+            "true",
+            "false",
+            "auto"
+          ],
+          "help": "Whether to stamp binaries with version control information"
+        },
+        {
+          "keyword": "-compiler",
+          "variable": "name",
+          "choices": [
+            "gccgo",
+            "gc"
+          ],
+          "help": "name of compiler to use"
+        },
+        {
+          "keyword": "-gccgoflags",
+          "variable": "arg_list",
+          "group": "flags",
+          "help": "arguments to pass on each gccgo compiler/linker invocation."
+        },
+        {
+          "keyword": "-gcflags",
+          "variable": "arg_list",
+          "group": "flags",
+          "help": "arguments to pass on each go tool compile invocation."
+        },
+        {
+          "keyword": "-installsuffix",
+          "variable": "suffix",
+          "help": "a suffix to use in the name of the package installation directory, in order to keep output separate from default builds."
+        },
+        {
+          "keyword": "-ldflags",
+          "variable": "arg_list",
+          "group": "flags",
+          "help": "arguments to pass on each go tool link invocation."
+        },
+        {
+          "keyword": "-linkshared",
+          "help": "build code that will be linked against shared libraries previously created with -buildmode=shared."
+        },
+        {
+          "keyword": "-mod",
+          "variable": "mode",
+          "choices": [
+            "readonly",
+            "vendor",
+            "mod"
+          ],
+          "group": "mod",
+          "help": "module download mode to use"
+        },
+        {
+          "keyword": "-modcacherw",
+          "group": "mod",
+          "help": "leave newly-created directories in the module cache read-write instead of making them read-only."
+        },
+        {
+          "keyword": "-modfile",
+          "variable": "file",
+          "type": "file",
+          "group": "mod",
+          "help": "in module aware mode, read (and possibly write) an alternate go.mod file instead of the one in the module root directory."
+        },
+        {
+          "keyword": "-overlay",
+          "variable": "file",
+          "type": "file",
+          "help": "read a JSON config file that provides an overlay for build operations."
+        },
+        {
+          "keyword": "-pgo",
+          "variable": "file",
+          "type": "file",
+          "help": "specify the file path of a profile for profile-guided optimization (PGO)."
+        },
+        {
+          "keyword": "-pkgdir",
+          "variable": "dir",
+          "type": "dir",
+          "help": "install and load all packages from dir instead of the usual locations."
+        },
+        {
+          "keyword": "-tags",
+          "variable": "tag_list",
+          "display_order": 2,
+          "help": "a comma-separated list of additional build tags"
+        },
+        {
+          "keyword": "-trimpath",
+          "help": "remove all file system paths from the resulting executable."
+        },
+        {
+          "keyword": "-toolexec",
+          "variable": "cmd_args",
+          "help": "a program to use to invoke toolchain programs like vet and asm."
+        },
+        {
+          "variable": "packages",
+          "default": ".",
+          "display_order": 1,
+          "help": "Packages to build"
+        }
+      ]
+    }
+  ]
+}
+

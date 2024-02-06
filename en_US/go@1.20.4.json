@@ -194,6 +194,31 @@
           "help": "Packages to build"
         }
       ]
+    },
+    {
+      "command": "go get",
+      "arguments": [
+        {
+          "keyword": "-t",
+          "help": "consider modules needed to build 'tests' of packages specified on the command line."
+        },
+        {
+          "keyword": "-u",
+          "help": "update modules providing dependencies of packages named on the command line to use newer minor or patch releases when available."
+        },
+        {
+          "keyword": "-u=patch",
+          "help": "update dependencies, but changes the default to select patch releases."
+        },
+        {
+          "keyword": "-x",
+          "help": "prints commands as they are executed."
+        },
+        {
+          "variable": "packages",
+          "help": "The packages to get"
+        }
+      ]
     }
   ]
 }
